@@ -1,8 +1,5 @@
 package com.geniusver.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.rest.core.annotation.RestResource;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,21 +7,23 @@ import java.util.List;
 /**
  * Copyright (c) 2018 GeniusV
  * All rights reserved.
- * Created by GeniusV on 3/21/18.
+ * Created by GeniusV on 3/22/18.
  */
 @Entity
-public class Course {
+public class Major {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
 
-
     @ManyToOne
     @JoinColumn(name = "collageId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "null"))
     private Collage collage;
 
+    @OneToMany(mappedBy = "major", cascade = CascadeType.ALL)
+    private List<Claxx> claxxes = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -50,5 +49,11 @@ public class Course {
         this.collage = collage;
     }
 
+    public List<Claxx> getClaxxes() {
+        return claxxes;
+    }
 
+    public void setClaxxes(List<Claxx> claxxes) {
+        this.claxxes = claxxes;
+    }
 }

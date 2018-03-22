@@ -1,5 +1,6 @@
 package com.geniusver.entities;
 
+import org.hibernate.annotations.Cascade;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
@@ -20,8 +21,31 @@ public class Collage {
 
     private String name;
 
-    @OneToMany(mappedBy = "collage", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "collage", cascade = CascadeType.ALL)
     private List<Course> courses = new ArrayList<>();
+
+
+    @OneToMany(mappedBy = "collage", cascade = CascadeType.ALL)
+    private List<Major> majors = new ArrayList<>();
+
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
+    public List<Major> getMajors() {
+        return majors;
+    }
+
+    public void setMajors(List<Major> majors) {
+        this.majors = majors;
+    }
+
+
 
     public Long getId() {
         return id;
