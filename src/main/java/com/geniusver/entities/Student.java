@@ -17,7 +17,7 @@ public class Student {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "claxxId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "null"))
+    @JoinColumn(name = "claxxId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     private Claxx claxx;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)

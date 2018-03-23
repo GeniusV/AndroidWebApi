@@ -13,15 +13,15 @@ public class Score {
     @Id
     private Long id;
 
-    @JoinColumn(name = "studentId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "null"))
+    @JoinColumn(name = "studentId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     @ManyToOne
     private Student student;
 
     @ManyToOne
-    @JoinColumn(name = "courseId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "null"))
+    @JoinColumn(name = "courseId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     private Course course;
 
-    @JoinColumn(name = "termId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "null"))
+    @JoinColumn(name = "termId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     @ManyToOne
     private Term term;
 

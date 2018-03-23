@@ -24,7 +24,7 @@ public class Claxx {
     private List<Student> students = new ArrayList<>();
 
     @ManyToOne
-    @JoinColumn(name = "majorId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "null"))
+    @JoinColumn(name = "majorId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     private Major major;
 
     public List<Student> getStudents() {

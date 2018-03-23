@@ -19,7 +19,7 @@ public class Major {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "collageId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "null"))
+    @JoinColumn(name = "collageId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     private Collage collage;
 
     @OneToMany(mappedBy = "major", cascade = CascadeType.ALL)
