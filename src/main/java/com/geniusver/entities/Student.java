@@ -20,6 +20,7 @@ public class Student {
     @JoinColumn(name = "claxxId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     private Claxx claxx;
 
+    @org.hibernate.annotations.ForeignKey(name = "none")
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Score> scores = new ArrayList<>();
 

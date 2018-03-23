@@ -1,11 +1,6 @@
 package com.geniusver.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.rest.core.annotation.RestResource;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Copyright (c) 2018 GeniusV

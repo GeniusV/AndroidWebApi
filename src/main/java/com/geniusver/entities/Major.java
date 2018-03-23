@@ -22,6 +22,7 @@ public class Major {
     @JoinColumn(name = "collageId", referencedColumnName = "id", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     private Collage collage;
 
+    @org.hibernate.annotations.ForeignKey(name = "none")
     @OneToMany(mappedBy = "major", cascade = CascadeType.ALL)
     private List<Claxx> claxxes = new ArrayList<>();
 

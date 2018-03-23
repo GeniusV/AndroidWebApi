@@ -4,8 +4,6 @@ import com.geniusver.entities.Score;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import javax.persistence.Id;
-
 /**
  * Copyright (c) 2018 GeniusV
  * All rights reserved.

@@ -1,8 +1,5 @@
 package com.geniusver.entities;
 
-import org.hibernate.annotations.Cascade;
-import org.springframework.data.rest.core.annotation.RestResource;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +18,11 @@ public class Collage {
 
     private String name;
 
+    @org.hibernate.annotations.ForeignKey(name = "none")
     @OneToMany(mappedBy = "collage", cascade = CascadeType.ALL)
     private List<Course> courses = new ArrayList<>();
 
-
+    @org.hibernate.annotations.ForeignKey(name = "none")
     @OneToMany(mappedBy = "collage", cascade = CascadeType.ALL)
     private List<Major> majors = new ArrayList<>();
 
@@ -44,7 +42,6 @@ public class Collage {
     public void setMajors(List<Major> majors) {
         this.majors = majors;
     }
-
 
 
     public Long getId() {

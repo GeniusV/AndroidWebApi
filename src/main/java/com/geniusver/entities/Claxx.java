@@ -1,7 +1,5 @@
 package com.geniusver.entities;
 
-import sun.jvm.hotspot.memory.Generation;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +18,7 @@ public class Claxx {
     private Long id;
     private String name;
 
+    @org.hibernate.annotations.ForeignKey(name = "none")
     @OneToMany(mappedBy = "claxx", cascade = CascadeType.ALL)
     private List<Student> students = new ArrayList<>();
 
