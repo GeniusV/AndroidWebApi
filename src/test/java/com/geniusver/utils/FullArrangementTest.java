@@ -13,11 +13,11 @@ public class FullArrangementTest {
 
     @Test
     public void run() {
-        String[] data = {"test1", "test2", "test3"};
-        List<List<String>> result =  FullArrangement.run(data);
-        for (List<String> item : result) {
-            System.out.println(item);
-        }
+//        String[] data = {"test1", "test2", "test3"};
+//        List<List<String>> result =  FullArrangement.run(data);
+//        for (List<String> item : result) {
+//            System.out.println(item);
+//        }
 
     }
 }
