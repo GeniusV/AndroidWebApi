@@ -1,5 +1,7 @@
 package com.geniusver.entities;
 
+import org.springframework.stereotype.Controller;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,7 @@ public class Major {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(unique = true)
     private String name;
 
     @ManyToOne

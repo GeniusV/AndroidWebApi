@@ -1,9 +1,6 @@
 package com.geniusver.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Copyright (c) 2018 GeniusV
@@ -17,6 +14,7 @@ public class Term {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(unique = true)
     private String value;
 
     public Long getId() {

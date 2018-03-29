@@ -16,6 +16,8 @@ public class Claxx {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(unique = true)
     private String name;
 
     @org.hibernate.annotations.ForeignKey(name = "none")

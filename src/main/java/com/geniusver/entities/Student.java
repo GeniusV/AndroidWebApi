@@ -24,6 +24,7 @@ public class Student {
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Score> scores = new ArrayList<>();
 
+    @Column(unique = true)
     private String name;
 
     public List<Score> getScores() {
