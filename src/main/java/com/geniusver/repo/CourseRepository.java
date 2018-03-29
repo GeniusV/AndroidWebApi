@@ -18,5 +18,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(collectionResourceRel = "course", path = "course")
 public interface CourseRepository extends CrudRepository<Course, Long> {
     Page<Course> findByCollage(@Param("collage") Collage collage, Pageable page);
-    Page<Course> findByName(@Param("name") String name, Pageable page);
+    Course findByName(@Param("name") String name);
 }

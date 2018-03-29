@@ -17,3 +17,4 @@ import java.util.List;
 public interface CollageRepository extends PagingAndSortingRepository<Collage, Long> {
     Collage findByName(@Param("name") String name);
 }
+
