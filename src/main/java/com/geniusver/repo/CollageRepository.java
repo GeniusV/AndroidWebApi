@@ -15,5 +15,5 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "collage", path = "collage")
 public interface CollageRepository extends PagingAndSortingRepository<Collage, Long> {
-    List<Collage> findByName(@Param("name") String name);
+    Collage findByName(@Param("name") String name);
 }
