@@ -45,7 +45,7 @@ fun generateMethods(name: String, fields: Array<String>, baseNames: Array<String
         val methodNames = fieldArrangement.map { it["name"]?.capitalize() }
         val methodNameString = "findBy" + methodNames.joinToString("And")
         val paramsString = params.joinToString(", ")
-        val template =  "Page<$name> $methodNameString($paramsString, Pageable page);"
+        val template = "Page<$name> $methodNameString($paramsString, Pageable page);"
 
         result.add(template)
     }

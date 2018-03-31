@@ -1,7 +1,5 @@
 package com.geniusver.entities;
 
-import org.springframework.stereotype.Controller;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;

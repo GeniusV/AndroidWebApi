@@ -45,6 +45,4 @@ public class Course {
     public void setCollage(Collage collage) {
         this.collage = collage;
     }
-
-
 }

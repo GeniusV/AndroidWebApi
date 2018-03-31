@@ -16,5 +16,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(collectionResourceRel = "claxx", path = "claxx")
 public interface ClaxxRepository extends PagingAndSortingRepository<Claxx, Long> {
     Page<Claxx> findByMajor(@Param("major") Major major, Pageable page);
+
     Claxx findByName(@Param("name") String name);
 }

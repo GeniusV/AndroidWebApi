@@ -16,5 +16,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(collectionResourceRel = "major", path = "major")
 public interface MajorRepository extends PagingAndSortingRepository<Major, Long> {
     Page<Major> findByCollage(@Param("collage") Collage collage, Pageable page);
+
     Major findByName(@Param("name") String name);
 }
