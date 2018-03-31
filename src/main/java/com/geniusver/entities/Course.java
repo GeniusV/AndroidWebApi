@@ -13,6 +13,7 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(unique = true)
     private String name;
 
 
@@ -44,6 +45,4 @@ public class Course {
     public void setCollage(Collage collage) {
         this.collage = collage;
     }
-
-
 }
