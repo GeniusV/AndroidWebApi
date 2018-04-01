@@ -2,6 +2,7 @@ package com.geniusver.repo;
 
 import com.geniusver.entities.Term;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 /**
@@ -11,4 +12,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
  */
 @RepositoryRestResource(collectionResourceRel = "term", path = "term")
 public interface TermRepository extends PagingAndSortingRepository<Term, Long> {
+    Term findByValue(@Param("value") String value);
 }
