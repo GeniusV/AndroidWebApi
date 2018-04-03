@@ -4,6 +4,7 @@ import com.geniusver.entities.Course;
 import com.geniusver.entities.Score;
 import com.geniusver.entities.Student;
 import com.geniusver.entities.Term;
+import com.geniusver.protection.ScoreProjection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -15,7 +16,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
  * All rights reserved.
  * Created by GeniusV on 3/22/18.
  */
-@RepositoryRestResource(collectionResourceRel = "score", path = "score")
+@RepositoryRestResource(collectionResourceRel = "score", path = "score", excerptProjection = ScoreProjection.class)
 public interface ScoreRepository extends PagingAndSortingRepository<Score, Long> {
 
     Page<Score> findByStudent(@Param("student") Student student, Pageable page);
