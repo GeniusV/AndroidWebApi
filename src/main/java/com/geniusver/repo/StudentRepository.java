@@ -19,4 +19,6 @@ public interface StudentRepository extends PagingAndSortingRepository<Student, L
     Page<Student> findByClaxx(@Param("claxx") Claxx claxx, Pageable page);
 
     Student findByName(@Param("name") String name);
+
+    Student findByIdAndPassword(@Param("id") Long id, @Param("password") String password);
 }

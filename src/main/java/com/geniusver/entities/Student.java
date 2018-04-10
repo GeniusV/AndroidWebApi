@@ -27,6 +27,16 @@ public class Student {
     @Column(unique = true)
     private String name;
 
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public List<Score> getScores() {
         return scores;
     }
