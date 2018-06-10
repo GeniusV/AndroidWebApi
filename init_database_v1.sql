@@ -10,8 +10,8 @@ DELETE FROM term;
 
 INSERT INTO collage VALUES (1, 'collage1');
 
-INSERT INTO student VALUES (1, 'student1', 1 );
-INSERT INTO student VALUES (2, 'student2', 1 );
+INSERT INTO student VALUES (1, 'student1', '123456', 1 );
+INSERT INTO student VALUES (2, 'student2', '123456', 1 );
 
 INSERT INTO claxx VALUES (1, 'class1', 1);
 
