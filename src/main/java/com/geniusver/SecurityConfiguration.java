@@ -14,17 +14,20 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.annotation.Resource;
-
 /**
  * Created by GeniusV on 6/13/18.
  */
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private DaoAuthenticationProvider daoAuthenticationProvider;
+
+    @Bean
+    public static NoOpPasswordEncoder passwordEncoder() {
+        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
+    }
 
     public DaoAuthenticationProvider getDaoAuthenticationProvider() {
         return daoAuthenticationProvider;
@@ -34,24 +37,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
         this.daoAuthenticationProvider = daoAuthenticationProvider;
     }
 
-    @Bean
-    public static NoOpPasswordEncoder passwordEncoder() {
-        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
-    }
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(daoAuthenticationProvider);
 //                .inMemoryAuthentication()
 //                .withUser("greg").password("turnquist").roles("USER").and()
 //                .withUser("ollie").password("gierke").roles("USER", "ADMIN");
-    }
-
-    @Bean
-    public DaoAuthenticationProvider authenticationProvider(PasswordEncoder passwordEncoder,@Autowired @Qualifier("myUserService") UserDetailsService userDetailsService) {
-        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-        authenticationProvider.setUserDetailsService(userDetailsService);
-        authenticationProvider.setPasswordEncoder(passwordEncoder);
-        return authenticationProvider;
     }
 
     @Override
@@ -66,5 +57,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
                 .antMatchers(HttpMethod.PATCH, "/**").hasRole("ADMIN")
                 .and()
                 .csrf().disable();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider(PasswordEncoder passwordEncoder, @Autowired @Qualifier("myUserService") UserDetailsService userDetailsService) {
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(userDetailsService);
+        authenticationProvider.setPasswordEncoder(passwordEncoder);
+        return authenticationProvider;
     }
 }

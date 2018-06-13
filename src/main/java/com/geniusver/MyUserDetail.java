@@ -11,14 +11,14 @@ import java.util.Collection;
 public class MyUserDetail  implements UserDetails{
     private String id;
     private String password;
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
     public MyUserDetail(String id, String password) {
         this.id = id;
         this.password = password;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
     }
 
     @Override
