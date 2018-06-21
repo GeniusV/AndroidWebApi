@@ -37,7 +37,7 @@ CREATE TABLE `claxx` (
 
 LOCK TABLES `claxx` WRITE;
 /*!40000 ALTER TABLE `claxx` DISABLE KEYS */;
-INSERT INTO `claxx` VALUES (1,'15级1版',1),(2,'15级2版',1);
+INSERT INTO `claxx` VALUES (1,'15级1班',1),(2,'15级2班',1);
 /*!40000 ALTER TABLE `claxx` ENABLE KEYS */;
 UNLOCK TABLES;
 
